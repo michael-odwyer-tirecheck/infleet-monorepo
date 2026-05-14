@@ -22,7 +22,7 @@ jobs:
           registry-url: https://npm.pkg.github.com
           scope: '@michael-odwyer-tirecheck'
 
-      - run: npm ci
+      - run: npm install
 
       - run: npm publish --workspace=packages/infleet-core
         env:
@@ -43,7 +43,7 @@ jobs:
           registry-url: https://npm.pkg.github.com
           scope: '@michael-odwyer-tirecheck'
 
-      - run: npm ci
+      - run: npm install
 
       - run: npm publish --workspace=packages/infleet-hooks
         env:
