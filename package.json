@@ -1,0 +1,11 @@
+{
+  "name": "infleet-monorepo",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "@types/react": "^19.2.14",
+    "typescript": "^6.0.3"
+  }
+}
