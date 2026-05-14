@@ -7,7 +7,7 @@
  * supply the transform and expose typed domain objects to UI screens.
  */
 import { useState, useEffect, useCallback, useRef } from 'react';
-import type { InfleetApiService } from '@infleet/core';
+import type { InfleetApiService } from '@michael-odwyer-tirecheck/infleet-core';
 
 // Equivalent of LogEntry in @ble/core
 export interface RequestLogEntry {

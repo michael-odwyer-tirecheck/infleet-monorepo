@@ -1,5 +1,5 @@
 {
-  "name": "@infleet/hooks",
+  "name": "@michael-odwyer-tirecheck/infleet-hooks",
   "version": "1.0.0",
   "main": "src/index.ts",
   "types": "src/index.ts",
@@ -8,7 +8,7 @@
     "access": "restricted"
   },
   "dependencies": {
-    "@infleet/core": "^1.0.0"
+    "@michael-odwyer-tirecheck/infleet-core": "^1.0.0"
   },
   "peerDependencies": {
     "react": "*"
