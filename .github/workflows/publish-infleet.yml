@@ -1,0 +1,50 @@
+name: Publish @infleet packages
+
+on:
+  push:
+    tags:
+      - 'infleet-core-v*'
+      - 'infleet-hooks-v*'
+
+jobs:
+  publish-core:
+    if: startsWith(github.ref_name, 'infleet-core-v')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          registry-url: https://npm.pkg.github.com
+          scope: '@infleet'
+
+      - run: npm ci
+
+      - run: npm publish --workspace=packages/infleet-core
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  publish-hooks:
+    if: startsWith(github.ref_name, 'infleet-hooks-v')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          registry-url: https://npm.pkg.github.com
+          scope: '@infleet'
+
+      - run: npm ci
+
+      - run: npm publish --workspace=packages/infleet-hooks
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

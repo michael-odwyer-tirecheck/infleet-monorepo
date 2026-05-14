@@ -1,11 +1,14 @@
 {
   "name": "@infleet/hooks",
   "version": "1.0.0",
-  "private": true,
   "main": "src/index.ts",
   "types": "src/index.ts",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com",
+    "access": "restricted"
+  },
   "dependencies": {
-    "@infleet/core": "*"
+    "@infleet/core": "^1.0.0"
   },
   "peerDependencies": {
     "react": "*"
